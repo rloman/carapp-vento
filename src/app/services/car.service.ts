@@ -13,7 +13,10 @@ export class CarService {
   constructor(private http: HttpClient) { }
 
   public findAll(): Observable<Car[]> {
-
     return this.http.get<Car[]>(this.url);
+  }
+
+  public create(car: Car): Observable<Car> {
+    return this.http.post<Car>(this.url, car);
   }
 }
