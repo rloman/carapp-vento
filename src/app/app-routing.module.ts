@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: "cars",
     component: CarsComponent
+  },
+  {
+    path: 'cars/:id',
+    component: CarItemComponent
   }
 ];
 
