@@ -1,6 +1,6 @@
 <app-car-add></app-car-add>
 
 <p *ngFor="let car of cars$ | async">
-  Er is een car met licensePlate: {{ car.licensePlate }} en brand: {{ car.brand }}
+  LicensePlate: {{ car.licensePlate }}, Brand: {{ car.brand }}.  <a [routerLink]="['/cars', car.id]">Edit</a>
 </p>
 

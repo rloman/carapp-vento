@@ -1,0 +1,16 @@
+<h3>Edit a Car</h3>
+
+<form [formGroup]="carForm" (ngSubmit)="onSubmit();">
+
+  <label for="licensePlate">License plate</label>
+  <input id="licensePlate" type="text" formControlName="licensePlate">
+
+  <label for="brand">Brand</label>
+  <input id="brand" type="text" formControlName="brand">
+
+  <label for="mileage">Mileage</label>
+  <input id="mileage" type="number" formControlName="mileage">
+
+  <label for="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <button id="submit" type="submit" [disabled]="!carForm.valid">Save</button>
+</form>

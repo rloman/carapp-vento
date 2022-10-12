@@ -7,12 +7,14 @@ import { HttpClientModule } from "@angular/common/http";
 import { CarsComponent } from './components/cars/cars.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsComponent,
-    CarAddComponent
+    CarAddComponent,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,
