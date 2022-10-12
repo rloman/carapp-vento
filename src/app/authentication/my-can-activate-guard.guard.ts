@@ -12,7 +12,7 @@ export class MyCanActivateGuardGuard implements CanActivate {
     : Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
 
-    return false;
+    return true;
   }
 
 }

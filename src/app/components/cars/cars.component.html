@@ -1,6 +1,6 @@
 <app-car-add></app-car-add>
 
 <p *ngFor="let car of cars$ | async">
-  LicensePlate: {{ car.licensePlate }}, Brand: {{ car.brand }}.  <a [routerLink]="['/cars', car.id]">Edit</a>
+  <app-car-item [car]="car"></app-car-item>
 </p>
 
