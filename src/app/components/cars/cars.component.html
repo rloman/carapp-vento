@@ -1,6 +1,6 @@
 <app-car-add></app-car-add>
 
-<p *ngFor="let car of cars$ | async">
+<table *ngFor="let car of cars$ | async">
   <app-car-item [car]="car"></app-car-item>
-</p>
+</table>
 
