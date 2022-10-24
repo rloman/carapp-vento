@@ -14,7 +14,7 @@ export class CarService {
   constructor(private http: HttpClient) { }
 
   public findAll(): Observable<Car[]> {
-    return this.http.get<Car[]>(this.url);
+    return this.http.get<Car[]>(`${this.url}?_sort=licensePlate&_order=asc`);
   }
 
   public create(car: Car): Observable<Car> {

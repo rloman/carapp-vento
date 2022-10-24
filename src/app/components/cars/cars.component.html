@@ -1,4 +1,4 @@
-<app-car-add></app-car-add>
+<app-car-add (newCarEventEmitter)="onCreateNewCarEventEmitted($event);" ></app-car-add>
 
 <table *ngFor="let car of cars$ | async">
   <app-car-item [car]="car"></app-car-item>

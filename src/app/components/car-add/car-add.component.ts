@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Observable} from "rxjs";
 import {Car} from "../../model/car";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
@@ -12,6 +12,11 @@ import {CarService} from "../../services/car.service";
 export class CarAddComponent implements OnInit {
 
   car$?: Observable<Car>;
+
+  @Output()
+  public newCarEventEmitter: EventEmitter<Car> = new EventEmitter<Car>();
+
+
   carForm: FormGroup = this.fb.group(
     {
       licensePlate: ['', Validators.required], //<= licensePlate is default blank and is required!
@@ -20,13 +25,12 @@ export class CarAddComponent implements OnInit {
     }
   );
   constructor(
-    private fb: FormBuilder,  // <=
-    private carService: CarService) {
+    private fb: FormBuilder) {
   }
   ngOnInit(): void {
   }
+
   onSubmit(): void {
-    this.car$ = this.carService.create(this.carForm.value);
-    this.carForm.reset();
+    this.newCarEventEmitter.emit(this.carForm.value)
   }
 }

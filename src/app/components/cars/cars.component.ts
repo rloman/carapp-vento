@@ -23,4 +23,11 @@ export class CarsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
   }
+
+  onCreateNewCarEventEmitted(car: Car) {
+    this.subscription?.unsubscribe();
+    this.subscription = this.carService.create(car).subscribe(car => {
+      this.ngOnInit();
+    })
+  }
 }
