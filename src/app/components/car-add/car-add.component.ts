@@ -32,5 +32,6 @@ export class CarAddComponent implements OnInit {
 
   onSubmit(): void {
     this.newCarEventEmitter.emit(this.carForm.value)
+    this.carForm.reset();
   }
 }

@@ -11,6 +11,8 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { CarItemComponent } from './components/car-item/car-item.component';
 import { DutchLicensePlatePipe } from './pipes/raymie-uppercase.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -24,9 +26,17 @@ import { HighlightDirective } from './directives/highlight.directive';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ToastrModule.forRoot(
+      {
+        timeOut: 3000,
+        positionClass: 'toast-top-center',
+        preventDuplicates: true
+      }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
